@@ -1,0 +1,17 @@
+# folder
+# ogani/node_module
+**/node_modules/
+**/media
+
+# file
+**/*.scss
+*.pyc
+**/db.sqlite3
+**/migrations
+**/*.test
+
+# project
+tesla/
+# ogani/
+nutreton/
+# fresha/
