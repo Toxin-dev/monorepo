@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +36,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "corsheaders",
     "rest_framework",
     "djoser",
     "fresha",
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -133,6 +134,13 @@ DJOSER = {"SERIALIZERS": {"user_create": "core.serializers.UserCreateSerializer"
 
 # User model
 AUTH_USER_MODEL = "account.User"
-USERNAME_FIELD = 'email'
+USERNAME_FIELD = "email"
 
 # User Permissions
+
+# CORS
+# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    # "http://127.0.0.1:9000",
+]
