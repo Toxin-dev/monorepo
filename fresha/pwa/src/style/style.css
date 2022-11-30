@@ -135,6 +135,11 @@ input::placeholder {
   height: calc(100vh - var(--header-height));
   display: flex;
 }
+@media screen and (width < 460px) {
+  .navbar {
+    display: none;
+  }
+}
 
 .navbar__side {
   padding: 4rem;
@@ -323,11 +328,6 @@ input::placeholder {
     grid-template-columns: 1fr;
   }
 }
-@media screen and (width < 780px) {
-  .setup-box {
-    --padding: 2rem;
-  }
-}
 
 .setup-box__heading {
   font-size: 2rem;
@@ -350,11 +350,21 @@ input::placeholder {
   }
 }
 
-.setup-box.profile .card {
+.setup-box .card {
   padding: var(--padding);
   display: flex;
   flex-direction: column;
   gap: var(--gap);
+}
+@media screen and (width < 700px) {
+  .setup-box .card {
+    --padding: 2rem;
+  }
+}
+@media screen and (width < 460px) {
+  .setup-box .card {
+    --padding: 1rem;
+  }
 }
 
 .setup-box.profile .card .profile__avatar {
@@ -400,7 +410,6 @@ input::placeholder {
 }
 
 .setup-box__change-password {
-  padding: var(--padding);
   display: flex;
   flex-direction: column;
   gap: var(--gap);
@@ -668,7 +677,7 @@ input::placeholder {
 }
 
 .layout {
-  --header-height: 4vh;
+  --header-height: 8vh;
 }
 
 .layout .header {
