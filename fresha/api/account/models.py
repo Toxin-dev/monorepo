@@ -21,7 +21,7 @@ class UserManager(BaseUserManager):
         is_active=True,
     ):
         if not email:
-            raise ValueError("email id should not be empty")
+            raise TypeError("User must have an email.")
         user = self.model(email=email)
         user.set_password(password)
         user.profile_picture = profile_picture
