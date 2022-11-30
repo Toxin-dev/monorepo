@@ -318,6 +318,16 @@ input::placeholder {
   grid-template-columns: 1fr calc(50% - 1rem);
   gap: 1rem;
 }
+@media screen and (width < 1080px) {
+  .setup-box {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (width < 780px) {
+  .setup-box {
+    --padding: 2rem;
+  }
+}
 
 .setup-box__heading {
   font-size: 2rem;
@@ -332,6 +342,12 @@ input::placeholder {
 
 .setup-box__profile-img {
   align-self: center;
+}
+@media screen and (width < 1240px) {
+  .setup-box__profile-img .profile__avatar {
+    width: 132px;
+    height: 132px;
+  }
 }
 
 .setup-box.profile .card {
@@ -349,15 +365,24 @@ input::placeholder {
   display: flex;
   gap: 2rem;
 }
+@media screen and (width < 1600px) {
+  .setup-box.profile .card .input-group {
+    flex-direction: column;
+  }
+}
+.setup-box.profile .card .input-group input {
+  flex-basis: 100%;
+}
 
 .setup-box__profile-img {
   position: relative;
 }
 
 .setup-box__profile-img--edit {
+  --size: 42px;
   cursor: pointer;
-  width: 42px;
-  height: 42px;
+  width: var(--size);
+  height: var(--size);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -414,6 +439,12 @@ input::placeholder {
 .setup-box__social-account .social-icon .btn {
   padding: 1.5rem 4rem;
   margin-left: auto;
+}
+@media screen and (width < 760px) {
+  .setup-box__social-account .social-icon .btn {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .setup-box__delete-account {
@@ -637,7 +668,7 @@ input::placeholder {
 }
 
 .layout {
-  --header-height: 10vh;
+  --header-height: 4vh;
 }
 
 .layout .header {
