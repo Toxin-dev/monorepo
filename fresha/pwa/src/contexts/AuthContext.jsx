@@ -1,20 +1,18 @@
-import { useContext } from "react";
+import { useContext, useReducer } from "react";
+import { useState } from "react";
 import { createContext } from "react";
 import { toast } from "react-toastify";
 
-const Auth = createContext({ checkLogin: "login" });
-const TIMEOUT = "4000";
-export function Authcontext(props) {
-  function loginHandler(state) {
-    if (state.isLogin) toast.success("Welcome", { autoClose: TIMEOUT });
-    if (!state.isLogin)
-      toast.error("Pelase check your email", { autoClose: TIMEOUT });
-  }
+const AuthContext = createContext({ checkLogin: "login" });
+
+export function AuthProvider({ userData, children }) {
+  let { user, setUser } = useState(userData)
+  user = typeof user === 'string' ? JSON.parse(user) : user;
   return (
-    <Auth.Provider value={{ checkLogin: loginHandler }}>
-      {props.children}
-    </Auth.Provider>
+    <AuthContext.Provider value={{ user, setUser }}>
+      {children}
+    </AuthContext.Provider>
   );
 }
 
-export const useAuth = () => useContext(Auth);
+export const useAuth = () => useContext(AuthContext);
