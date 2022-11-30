@@ -1,6 +1,7 @@
 import React from "react";
 import { LinkButton, Button } from "../component/index";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export function Signin(props) {
   return (
@@ -15,7 +16,7 @@ export function Signin(props) {
           type="tel"
           placeholder="Enter email address"
         />
-        <Button textContent="Continue" className="btn btn--sign" />
+        <Link to={'/user/sign-in'}><Button textContent="Continue" className="btn btn--sign" /></Link>
         <span className="seprator">OR</span>
         <LinkButton
           textContent="Continue with Facebook"

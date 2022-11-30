@@ -10,6 +10,7 @@ import {
 } from "react-icons/io5";
 import React from "react";
 import { HiChevronLeft } from "react-icons/hi";
+import { Link } from "react-router-dom";
 function Navebar({ sideHeading, pageContentList }) {
   return (
     <nav className="navbar">
@@ -22,13 +23,19 @@ function Navebar({ sideHeading, pageContentList }) {
       <div>
         <ul className="navbar__ul">
           <li className="navbar__li">
-            <NavIcon icon={<IoHomeOutline />} />
+            <Link to="/home">
+              <NavIcon icon={<IoHomeOutline />} />
+            </Link>
             <NavIcon icon={<IoCalendarClearOutline />} />
             <NavIcon icon={<IoPricetagSharp />} />
-            <NavIcon icon={<IoHappyOutline />} />
+            <Link to={'/client'}>
+              <NavIcon icon={<IoHappyOutline />} />
+            </Link>
             <NavIcon icon={<IoMegaphoneOutline />} />
             <NavIcon icon={<IoStatsChart />} />
-            <NavIcon icon={<IoSettingsOutline />} />
+            <Link to={'/setup'}>
+              <NavIcon icon={<IoSettingsOutline />} />
+            </Link>
           </li>
         </ul>
       </div>

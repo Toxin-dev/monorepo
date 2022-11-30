@@ -1,7 +1,6 @@
-import { useContext, useReducer } from "react";
+import { useContext} from "react";
 import { useState } from "react";
 import { createContext } from "react";
-import { toast } from "react-toastify";
 
 const AuthContext = createContext({ checkLogin: "login" });
 

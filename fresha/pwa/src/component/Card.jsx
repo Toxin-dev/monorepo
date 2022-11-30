@@ -1,8 +1,8 @@
 import propTypes from "prop-types";
 import { IoIosArrowForward } from "react-icons/io";
-export function Card({ title, children }) {
+export function Card({ title, children, style }) {
   return (
-    <div className="card">
+    <div className="card" style={style}>
       <h2 className="card__title">{title}</h2>
       <div className="card__body">{children}</div>
     </div>

@@ -76,7 +76,7 @@ input::placeholder {
 }
 
 .table {
-  --size: 1024px;
+  --size: auto;
   max-width: var(--size);
   border-collapse: collapse;
 }
@@ -142,6 +142,11 @@ input::placeholder {
   background-color: white;
   order: 1;
   position: relative;
+}
+@media screen and (width < 600px) {
+  .navbar__side {
+    display: none;
+  }
 }
 
 .navbar__side.open {
@@ -555,6 +560,42 @@ input::placeholder {
   margin-left: auto;
 }
 
+.home-card__body {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.home-card__icon {
+  font-size: 7.2rem;
+}
+@media screen and (width < 1024px) {
+  .home-card__icon {
+    font-size: 6.2rem;
+  }
+}
+@media screen and (width < 600px) {
+  .home-card__icon {
+    font-size: 4.2rem;
+  }
+}
+.home-card__title {
+  margin-bottom: 0.4em;
+}
+@media screen and (width < 980px) {
+  .home-card__title {
+    font-size: 2rem;
+  }
+}
+.home-card__subtitle {
+  color: rgb(160, 160, 160);
+  text-align: center;
+}
+@media screen and (width < 980px) {
+  .home-card__subtitle {
+    font-size: 1.6rem;
+  }
+}
+
 .content {
   display: flex;
   gap: 2rem;
@@ -573,6 +614,7 @@ input::placeholder {
 }
 
 .page-content {
+  flex-grow: 1;
   scrollbar-width: none;
   scroll-behavior: smooth;
   display: flex;
@@ -624,6 +666,17 @@ input::placeholder {
   cursor: pointer;
   background-color: rgb(245, 245, 245);
   border-radius: 100%;
+}
+
+.home-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template: repeat(3, 400px)/1fr 1fr;
+}
+@media screen and (width < 900px) {
+  .home-grid {
+    grid-template: repeat(6, 300px)/1fr;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

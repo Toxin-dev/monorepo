@@ -1,5 +1,6 @@
 import { Header } from "../component/index";
 import { BiArrowBack } from "react-icons/bi";
+import { Link } from "react-router-dom";
 export function Login(props) {
   return (
     <>
@@ -19,7 +20,7 @@ export function Login(props) {
           </div>
           <input type="password" placeholder="Enter your password" />
           <a href="#forget-password">Forget your password?</a>
-          <button className="btn btn--sign"> Log in</button>
+          <Link to={'/setup'}><button className="btn btn--sign"> Log in</button></Link>
         </form>
       </div>
     </>
