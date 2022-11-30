@@ -1,6 +1,6 @@
-import { BiBarChart, BiBarChartSquare, BiCalendar, BiChevronUpSquare, BiStopwatch, BiUnite } from "react-icons/bi";
+import { BiBarChart, BiBarChartSquare, BiCalendar,BiStopwatch} from "react-icons/bi";
 import { FaChartBar, FaChartLine } from "react-icons/fa";
-import { Card, CardItem } from "../component/Card";
+import { Card } from "../component/Card";
 import Layout from "../component/common/Layout";
 
 export function HomePage(props) {
