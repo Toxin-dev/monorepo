@@ -28,6 +28,10 @@ a {
   color: inherit;
 }
 
+form input {
+  padding: 2rem 1rem;
+}
+
 input {
   font-size: inherit;
   border: 1px solid rgb(193, 193, 193);
@@ -38,6 +42,14 @@ input::placeholder {
   color: rgb(103, 102, 102);
 }
 
+@keyframes fade {
+  from {
+    oparity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .btn {
   padding: 1.5rem 1rem;
   font-size: 1.6rem;
@@ -46,6 +58,12 @@ input::placeholder {
 .btn--sign {
   background-color: rgb(16, 25, 40);
   color: white;
+  width: 100%;
+}
+.btn--logout {
+  background-color: rgb(213, 48, 84);
+  color: white;
+  padding: 2rem 6rem;
 }
 .btn--link {
   border: 1px solid rgb(210, 210, 210);
@@ -106,7 +124,7 @@ input::placeholder {
 }
 @media screen and (width < 1020px) {
   .table__body td .client-profile {
-    --size: 200px ;
+    --size: 200px;
   }
 }
 
@@ -469,6 +487,7 @@ input::placeholder {
 .setup-box__footer {
   display: flex;
   justify-content: flex-end;
+  gap: 2rem;
 }
 
 .nav__icon {
@@ -697,6 +716,21 @@ input::placeholder {
   .home-card__subtitle {
     font-size: 1.6rem;
   }
+}
+
+.loading {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.loading .circle {
+  --size: 16px;
+  width: var(--size);
+  height: var(--size);
+  background: rgb(159, 159, 159);
+  display: inline-block;
+  border-radius: 100%;
+  animation: 0.8s fade linear alternate infinite;
 }
 
 .content {
