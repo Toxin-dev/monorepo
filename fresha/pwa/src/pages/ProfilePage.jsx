@@ -1,4 +1,5 @@
 import { FaCamera, FaFacebook, FaGoogle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Layout from "../component/common/Layout";
 import { Avatar, Setup } from "../component/index";
 
@@ -91,6 +92,7 @@ export function ProfilePage({ profileDetails = {} }) {
             </div>
           </Setup>
           <footer className="setup-box__footer">
+            <Link to={'/'}><button className="btn btn--logout">Logout</button></Link>
             <button className="btn btn--save">Save</button>
           </footer>
         </div>
