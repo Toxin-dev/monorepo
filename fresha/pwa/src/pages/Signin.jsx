@@ -2,8 +2,16 @@ import React from "react";
 import { LinkButton, Button } from "../component/index";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
 export function Signin(props) {
+  const [email, setEmail] = useState('')
+
+  function handleChange({ target: { value: email } }) {
+    setEmail(email)
+  }
+  function apiUsers(payload) {
+    fetch('http://localhost:8000/users/', { method: 'POST', body: payload }).then(res => console.log(res))
+  }
   return (
     <div className={props.className}>
       <form className="form">
@@ -15,8 +23,10 @@ export function Signin(props) {
           className="form__input"
           type="tel"
           placeholder="Enter email address"
+          value={email}
+          onChange={handleChange}
         />
-        <Link to={'/user/sign-in'}><Button textContent="Continue" className="btn btn--sign" /></Link>
+        <Button onClick={(e) => { e.preventDefault(); apiUsers({ "email": email }) }} textContent="Continue" className="btn btn--sign" />
         <span className="seprator">OR</span>
         <LinkButton
           textContent="Continue with Facebook"
@@ -34,7 +44,7 @@ export function Signin(props) {
           </h3>
           <p>
             If you are a customer wishing to book a service{" "}
-            <em>sign up as an a customer</em>
+            <Link to="/sign-up"><em>sign up as an a customer</em></Link>
           </p>
         </div>
       </form>

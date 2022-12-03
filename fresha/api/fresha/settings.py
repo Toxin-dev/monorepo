@@ -36,13 +36,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "corsheaders",
-    "rest_framework",
-    "djoser",
-    "fresha",
-    "account",
-    "client",
-    "core",
 ]
 
 MIDDLEWARE = [
@@ -91,20 +84,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
-    # {
-    #     "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    # },
-    # {
-    #     "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    # },
-    # {
-    #     "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    # },
-    # {
-    #     "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    # },
-]
+AUTH_PASSWORD_VALIDATORS = []
 
 
 # Internationalization
@@ -129,18 +109,4 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# User account
-DJOSER = {"SERIALIZERS": {"user_create": "core.serializers.UserCreateSerializer"}}
-
-# User model
-AUTH_USER_MODEL = "account.User"
-USERNAME_FIELD = "email"
-
-# User Permissions
-
-# CORS
-# CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
-    # "http://127.0.0.1:9000",
-]
+# ///////////////////Custom//////////////////////////

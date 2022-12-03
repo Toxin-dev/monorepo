@@ -20,10 +20,10 @@ export function Signup({ className = 'form', children }) {
         <p>
           I agree to the <a href="#privacy">Privacy Policy</a>,{" "}
           <a href="#terms-of-services">Terms of Services</a> and{" "}
-          <a href="term-of-business">Terms of Business</a>.
+          <a href="#term-of-business">Terms of Business</a>.
         </p>
       </div>
-      <Button type="submit" className="btn btn--sign" textContent='Create account' />
+      <Button onClick={(e) => e.preventDefault()} type="submit" className="btn btn--sign" textContent='Create account' />
     </form>
   );
 }

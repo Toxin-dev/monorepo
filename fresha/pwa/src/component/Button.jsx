@@ -1,6 +1,6 @@
 import propTypes from "prop-types";
-export function Button({ className, textContent }) {
-  return <button className={className}>{true ? textContent : <Loading />} </button>;
+export function Button({ className, textContent, onClick }) {
+  return <button onClick={onClick} className={className}>{true ? textContent : <Loading />} </button>;
 }
 
 Button.prototype = {
