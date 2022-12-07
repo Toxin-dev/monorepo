@@ -3,9 +3,9 @@ from django.db import models
 # Create your models here.
 class Owner(models.Model):
     name = models.CharField(max_length=120)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     postal_code = models.IntegerField()
-    phone_number = models.IntegerField(unique=True)
+    phone_number = models.CharField(max_length=10, unique=True)
 
 
 class Salon(models.Model):
@@ -20,6 +20,7 @@ class Service(models.Model):
     name = models.CharField(max_length=120)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     gender = models.CharField(max_length=1, choices=[("m", "male"), ("f", "female")])
+
 
 class Staff(models.Model):
     name = models.CharField(max_length=80)
