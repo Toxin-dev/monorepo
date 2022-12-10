@@ -3,10 +3,11 @@ import {
   IoRocketOutline,
   IoSearchOutline,
 } from "react-icons/io5";
-import { Header, Avatar, PageHeading } from "../index";
+import { Header, Avatar} from "../index";
 import Navebar from "./Navbar";
+import { Outlet } from "react-router-dom";
 
-export default function Layout({ children, pageHeading, subTitle }) {
+export default function Layout() {
   return (
     <div className="layout">
       <Header logo={"Fresha"}>
@@ -20,8 +21,7 @@ export default function Layout({ children, pageHeading, subTitle }) {
       <div className="content">
         <Navebar />
         <div className="page-content">
-          <PageHeading title={pageHeading} subTitle={subTitle} />
-          {children}
+          <Outlet />
         </div>
       </div>
     </div>

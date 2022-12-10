@@ -50,6 +50,78 @@ input::placeholder {
     opacity: 0;
   }
 }
+.form {
+  margin: 0 auto;
+  width: 420px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+  gap: 2rem;
+}
+.form__policy {
+  display: flex;
+  gap: 1rem;
+}
+.form__policy input[type=checkbox]:checked {
+  color: red;
+}
+.form__policy p {
+  font-size: 1.4rem;
+}
+.form__policy p a {
+  accent-color: rgb(29, 136, 255);
+}
+.form__header {
+  text-align: center;
+}
+.form__header h2 {
+  margin-bottom: 1rem;
+}
+.form__header p {
+  font-size: 1.6rem;
+}
+.form__img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+}
+.form__footer {
+  text-align: center;
+}
+.form__footer__heading {
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.form__footer a {
+  color: rgb(29, 136, 255);
+}
+.form__footer p {
+  font-size: 1.4rem;
+  color: gray;
+}
+.form__footer p em {
+  color: rgb(29, 136, 255);
+  font-style: normal;
+}
+
+.seprator {
+  display: block;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: gray;
+}
+
+.seprator::after,
+.seprator::before {
+  content: "";
+  width: 100%;
+  padding: 1px;
+  background-color: rgb(245, 245, 245);
+}
+
 .btn {
   padding: 1.5rem 1rem;
   font-size: 1.6rem;
@@ -89,6 +161,63 @@ input::placeholder {
   padding: 2rem;
   background-color: white;
   border: 1px solid rgb(210, 210, 210);
+}
+
+.navbar {
+  background-color: rgb(16, 25, 40);
+  height: calc(100vh - var(--header-height));
+  display: flex;
+}
+@media screen and (width < 460px) {
+  .navbar {
+    display: none;
+  }
+}
+
+.navbar__side {
+  padding: 4rem 1rem;
+  border-right: 1px solid rgb(210, 210, 210);
+  background-color: white;
+  order: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 250px;
+}
+@media screen and (width < 600px) {
+  .navbar__side {
+    display: none;
+  }
+}
+
+.navbar__side__action-btn {
+  --size: 32px;
+  border-radius: 100%;
+  width: var(--size);
+  height: var(--size);
+  box-shadow: 0 0 10px rgb(190, 190, 190);
+  font-size: 3rem;
+  color: rgb(190, 190, 190);
+  position: absolute;
+  right: -16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.navbar__side__action-btn > * {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav__link {
+  padding: 1rem;
+  border-radius: 5px;
+}
+.nav__link:hover {
+  background-color: var(--blue);
 }
 
 .table {
@@ -149,176 +278,6 @@ input::placeholder {
   font-size: 3rem;
   color: rgb(29, 136, 255);
   font-weight: bold;
-}
-
-.navbar {
-  background-color: rgb(16, 25, 40);
-  height: calc(100vh - var(--header-height));
-  display: flex;
-}
-@media screen and (width < 460px) {
-  .navbar {
-    display: none;
-  }
-}
-
-.navbar__side {
-  padding: 4rem;
-  border-right: 1px solid rgb(210, 210, 210);
-  background-color: white;
-  order: 1;
-  position: relative;
-}
-@media screen and (width < 600px) {
-  .navbar__side {
-    display: none;
-  }
-}
-
-.navbar__side.open {
-  width: 200px;
-}
-
-.navbar__side.close {
-  width: 0;
-  padding: 0;
-}
-
-.navbar__side.close .navbar__side__action-btn {
-  display: none;
-}
-
-.navbar__side__action-btn {
-  --size: 32px;
-  width: max-content;
-  border-radius: 100%;
-  width: var(--size);
-  height: var(--size);
-  box-shadow: 0 0 10px rgb(190, 190, 190);
-  font-size: 3rem;
-  color: rgb(190, 190, 190);
-  position: absolute;
-  right: -16px;
-  background-color: white;
-  cursor: pointer;
-}
-
-.navbar__side__action-btn > * {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.login {
-  width: 420px;
-  margin: 0 auto;
-}
-
-.login__form {
-  display: flex;
-  flex-direction: column;
-}
-
-.login__header {
-  text-align: center;
-}
-
-.login__header__img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 100%;
-  margin-bottom: 2rem;
-}
-
-.login__header__heading {
-  margin-bottom: 4rem;
-}
-
-.login__header__heading > h2 {
-  font-size: 2.4rem;
-  margin-bottom: 2rem;
-}
-
-.login__header__heading > p {
-  font-size: 1.4rem;
-}
-
-.login input {
-  margin-bottom: 4rem;
-}
-
-.login a {
-  color: rgb(29, 136, 255);
-  font-size: 1.8rem;
-  margin-bottom: 3rem;
-}
-
-.form {
-  margin: 0 auto;
-  width: 420px;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.form__policy {
-  display: flex;
-  gap: 1rem;
-}
-.form__policy input[type=checkbox]:checked {
-  color: red;
-}
-.form__policy p {
-  font-size: 1.4rem;
-}
-.form__policy p a {
-  accent-color: rgb(29, 136, 255);
-}
-.form__header {
-  text-align: center;
-}
-.form__header h2 {
-  margin-bottom: 1rem;
-}
-.form__header p {
-  font-size: 1.6rem;
-}
-.form__footer {
-  text-align: center;
-}
-.form__footer__heading {
-  font-size: 1.6rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
-}
-.form__footer a {
-  color: rgb(29, 136, 255);
-}
-.form__footer p {
-  font-size: 1.4rem;
-  color: gray;
-}
-.form__footer p em {
-  color: rgb(29, 136, 255);
-  font-style: normal;
-}
-
-.seprator {
-  display: block;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: gray;
-}
-
-.seprator::after,
-.seprator::before {
-  content: "";
-  width: 100%;
-  padding: 1px;
-  background-color: rgb(245, 245, 245);
 }
 
 .link--delete {
@@ -819,6 +778,10 @@ input::placeholder {
   .home-grid {
     grid-template: repeat(6, 300px)/1fr;
   }
+}
+
+:root {
+  --blue: #e5f1ff;
 }
 
 /*# sourceMappingURL=style.css.map */

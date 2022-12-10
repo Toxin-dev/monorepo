@@ -1,8 +1,6 @@
 import { Card, CardItem } from "../component/Card";
-import Layout from "../component/common/Layout";
 export function BusinessSettingPage() {
   return (
-    <Layout pageHeading={"Business Settings"}>
       <div className="business-setting-content">
         <div className="page-content__left">
           <Card title="Account setup">
@@ -95,6 +93,5 @@ export function BusinessSettingPage() {
           </Card>
         </div>
       </div>
-    </Layout>
   );
 }
