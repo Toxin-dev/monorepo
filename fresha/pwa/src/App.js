@@ -9,7 +9,6 @@ import {
   ClientManagePage,
   HomePage,
   BusinessSettingPage,
-  Verify,
 } from "./pages";
 
 const auth_sign_in = (

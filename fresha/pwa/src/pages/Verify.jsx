@@ -1,5 +1,4 @@
 import { Button, LinkButton } from "../component";
-import { Link } from "react-router-dom";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { useState } from "react";
 export function Verify() {
@@ -36,7 +35,7 @@ export function Verify() {
           e.preventDefault();
           handleClick(e);
         }}
-        path="/auth/sign-in"
+        path="/sign-in"
         textContent="Continue"
         className="btn btn--sign"
       />

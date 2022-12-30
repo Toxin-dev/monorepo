@@ -2,9 +2,11 @@ import propTypes from "prop-types";
 import { Link } from "react-router-dom";
 export function Button({ className, textContent, onClick, path }) {
   return (
-    <button onClick={onClick} className={className}>
-      <Link to={path}>{true ? textContent : <Loading />} </Link>
-    </button>
+    <Link to={path}>
+      <button onClick={onClick} className={className}>
+        {true ? textContent : <Loading />}
+      </button>{" "}
+    </Link>
   );
 }
 

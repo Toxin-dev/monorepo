@@ -6,3 +6,4 @@ export { NavIcon } from "./NavIcon";
 export { Avatar } from "./Avatar";
 export { FilterBar } from "./FilterBar";
 export { Setup } from "./Setup";
+export { Card, CardItem } from "./Card";
